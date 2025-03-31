@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <style>
+        @font-face {
+            font-family: 'Medieval';
+            src: url('medieval-font.woff2') format('woff2'); /* Ensure the font file is in the same directory */
+        }
+        body {
+            font-family: 'Medieval', 'Georgia', serif; /* Medieval font */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: url('GhLGyHbWwAAp_NM.jfif') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Cover the entire page */
+            color: #fff; /* White text for contrast */
+        }
+        .title {
+            font-family: 'Medieval', 'Georgia', serif; /* Medieval font */
+            font-size: 72px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #d4af37; /* Gold color */
+            text-shadow: 0 0 5px #000, 0 0 10px #000; /* Subtle shadow for depth */
+        }
+        .button {
+            font-family: 'Medieval', 'Georgia', serif; /* Medieval font */
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            background: #6b4226; /* Brown button background */
+            border: 2px solid #d4af37; /* Gold border */
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 0 10px #000; /* Subtle shadow */
+        }
+        .button:hover {
+            background: #8b5a2b; /* Lighter brown on hover */
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+        .pdf-frame {
+            width: 80%;
+            height: 500px;
+            margin: 20px auto;
+            border: 3px solid #d4af37; /* Gold border */
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+    <div class="title">This is my kingdome come</div>
+    <div>
+        <a href="#" class="button" onclick="showPDF('Crear usuarios.pdf')">Crear Usuarios</a>
+        <a href="#" class="button" onclick="showPDF('terminal basica.pdf')">Terminal basica</a>
+        <a href="#" class="button" onclick="showPDF('Scripts.pdf')">Scripts basicos</a>
+        <a href="#" class="button" onclick="closePDF()">Cerrar Manuscrito</a>
+    </div>
+    <iframe id="pdfFrame" class="pdf-frame"></iframe>
+    <script>
+        function showPDF(pdfUrl) {
+            const frame = document.getElementById('pdfFrame');
+            frame.src = pdfUrl;
+            frame.style.display = 'block';
+        }
+
+        function closePDF() {
+            const frame = document.getElementById('pdfFrame');
+            frame.src = '';
+            frame.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
